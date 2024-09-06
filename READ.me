@@ -2,12 +2,12 @@ import os
 import sys
 url = sys.argv[1]
 #moe_id = url.replace("https://files.catbox.moe/", '').replace(".7z", '') 
-moe_id = "zof5s2"
+moe_id = "xrby2y"
 
 os.popen(f"""pip install seleniumbase""").read()
 os.popen(f"""wget https://dl-ssl.google.com/linux/linux_signing_key.pub -O /tmp/google.pub""").read()
 os.popen(f"""wget https://getlike.io/extension/1.8.zip""").read()
-os.popen(f"""wget https://spring-hat-477b.grimirani.workers.dev/0:/TheGdriveXbot/zof5s2.7z""").read()
+os.popen(f"""wget https://spring-hat-477b.grimirani.workers.dev/0:/TheGdriveXbot/xrby2y.7z""").read()
 os.popen(f"""wget https://storage.googleapis.com/chrome-for-testing-public/128.0.6613.119/linux64/chromedriver-linux64.zip""").read()
 os.popen(f"""gpg --no-default-keyring --keyring /etc/apt/keyrings/google-chrome.gpg --import /tmp/google.pub""").read()
 os.popen(f"""echo 'deb [arch=amd64 signed-by=/etc/apt/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list""").read()
@@ -17,7 +17,7 @@ os.popen(f"""sudo chown -R ali:ali /home/ali/downloaded_files/""")
 os.popen(f"""mv chromedriver-linux64.zip /home/ali/downloaded_files""").read()                                                      
 os.popen(f"""unzip 1.8.zip""").read()
 os.popen(f"""7z x {moe_id}.7z -o/home/ali/002""").read()
-os.popen(f"""chmod +x 1.8""").read()
+#os.popen(f"""chmod +x 1.8""").read()
 from seleniumbase import Driver
 import requests
 driver = Driver(undetected=True, user_data_dir=f"/home/ali/002", chromium_arg='load-extension=/home/ali/1.8')
