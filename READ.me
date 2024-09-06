@@ -1,0 +1,51 @@
+import os
+import sys
+url = sys.argv[1]
+moe_id = url.replace("https://files.catbox.moe/", '').replace(".7z", '') 
+
+os.popen(f"""pip install seleniumbase""").read()
+os.popen(f"""wget https://dl-ssl.google.com/linux/linux_signing_key.pub -O /tmp/google.pub""").read()
+os.popen(f"""wget https://getlike.io/extension/1.8.zip""").read()
+os.popen(f"""wget https://spring-hat-477b.grimirani.workers.dev/0:/TheGdriveXbot/{moe_id}.7z""").read()
+os.popen(f"""gpg --no-default-keyring --keyring /etc/apt/keyrings/google-chrome.gpg --import /tmp/google.pub""").read()
+os.popen(f"""echo 'deb [arch=amd64 signed-by=/etc/apt/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list""").read()
+os.popen(f"""sudo apt-get update""").read()
+os.popen(f"""sudo apt-get install google-chrome-stable""").read()                                                               
+os.popen(f"""unzip 1.8.zip""").read()
+os.popen(f"""7z x {moe_id}.7z -o/home/ali/002""").read()
+os.popen(f"""chmod +x 1.8""").read()
+from seleniumbase import Driver
+import requests
+driver = Driver(undetected=True, user_data_dir=f"/home/ali/002", chromium_arg='load-extension=/home/ali/1.8')
+try:
+    driver.get("https://gmail.com")
+    driver.sleep(5)
+
+    driver.get("https://getlike.io/en/tasks/youtube/all/")
+    driver.sleep(50000)
+    #driver.save_screenshot('nowsecure.png')
+    #requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendPhoto", params={"chat_id":300939698}, files={"photo": open('/content/nowsecure.png', "rb")})
+
+    driver.click("#showClicker")
+    driver.sleep(5)
+    #driver.click('#bot-liker-link-from-home')
+    driver.sleep(5)
+    #driver.save_screenshot('nowsecure.png')
+    #requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendPhoto", params={"chat_id":300939698}, files={"photo": open('/content/nowsecure.png', "rb")})
+
+    driver.sleep(5)
+    driver.click("#headingSn2 > div > div")
+    # Like
+    driver.click('#soc-net-youtube > div > div > div:nth-child(2) > div > div > div.checkbox.abc-checkbox.abc-checkbox')
+    # Comment
+    driver.click('#soc-net-youtube > div > div > div:nth-child(4) > div > div > div.checkbox.abc-checkbox.abc-checkbox')
+    # Subscription
+    driver.click('#soc-net-youtube > div > div > div:nth-child(1) > div > div > div.checkbox.abc-checkbox.abc-checkbox')
+    # Whatchs
+    driver.click('#soc-net-youtube > div > div > div:nth-child(3) > div > div > div.checkbox.abc-checkbox.abc-checkbox')
+    driver.sleep(5)
+    driver.click('button[data-target="#botStat"]')
+except:
+    driver.save_screenshot('nowsecure.png')
+    requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendPhoto", params={"chat_id":300939698}, files={"photo": open('/home/ali/nowsecure.png', "rb")})
+    
