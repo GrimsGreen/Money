@@ -28,7 +28,7 @@ for dir in path.glob('*'):
     #os.popen(f"""chmod +x 1.8""").read()
     from seleniumbase import Driver
     import requests
-    driver = Driver(undetected=True, user_data_dir=f"/home/ali/002/{dir}", chromium_arg='load-extension=/home/ali/1.8')
+    driver = Driver(undetected=True, user_data_dir=f"/home/ali/002/google-chrome/", chromium_arg='load-extension=/home/ali/1.8')
     try:
         driver.get("https://gmail.com")
         driver.sleep(5)
