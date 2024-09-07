@@ -2,7 +2,7 @@ import os
 import sys
 import pathlib
 
-url = sys.argvp[1]
+url = sys.argv[1]
 moe_id = url.replace("https://files.catbox.moe/", '').replace(".zip", '') 
 #moe_id = "xrby2y"
 
@@ -18,8 +18,9 @@ os.popen(f"""sudo apt-get install google-chrome-stable""").read()
 os.popen(f"""sudo rm -rf /home/ali/downloaded_files""").read()
 os.popen(f"""sudo mkdir /home/ali/downloaded_files""").read()
 os.popen(f"""sudo chown -R ali:ali /home/ali/downloaded_files/""").read()
-os.popen(f"""mv chromedriver-linux64.zip /home/ali/downloaded_files""").read()                                                      
-os.popen(f"""unzip 1.8.zip""").read()
+os.popen(f"""mv chromedriver-linux64.zip /home/ali/downloaded_files""").read()   
+os.popen(f"""unzip -q {moe_id}.zip -d /home/ali/002""").read()
+os.popen(f"""unzip -q 1.8.zip""").read()
 
 path = pathlib.Path("/home/ali/002")
 for dir in path.glob('*'):
