@@ -22,42 +22,41 @@ os.popen(f"""mv chromedriver-linux64.zip /home/ali/downloaded_files""").read()
 os.popen(f"""unzip -q {moe_id}.zip -d /home/ali/002""").read()
 os.popen(f"""unzip -q 1.8.zip""").read()
 
-path = pathlib.Path("/home/ali/002")
-for dir in path.glob('*'):
+#path = pathlib.Path("/home/ali/002")
+#for dir in path.glob('*'):
     #os.popen(f"""7z x {moe_id}.7z -o/home/ali/002""").read()
     #os.popen(f"""chmod +x 1.8""").read()
-    from seleniumbase import Driver
-    import requests
-    driver = Driver(undetected=True, user_data_dir=f"/home/ali/002/google-chrome/", chromium_arg='load-extension=/home/ali/1.8')
-    try:
-        driver.get("https://gmail.com")
-        driver.sleep(5)
+from seleniumbase import Driver
+import requests
+driver = Driver(undetected=True, user_data_dir=f"/home/ali/002/google-chrome/", chromium_arg='load-extension=/home/ali/1.8')
+try:
+    driver.get("https://gmail.com")
+    driver.sleep(5)
 
-        driver.get("https://getlike.io/en/tasks/youtube/all/")
-        driver.sleep(5)
-        #driver.save_screenshot('nowsecure.png')
-        #requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendPhoto", params={"chat_id":300939698}, files={"photo": open('/content/nowsecure.png', "rb")})
+    driver.get("https://getlike.io/en/tasks/youtube/all/")
+    driver.sleep(5)
+    #driver.save_screenshot('nowsecure.png')
+    #requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendPhoto", params={"chat_id":300939698}, files={"photo": open('/content/nowsecure.png', "rb")})
 
-        driver.click("#showClicker")
-        driver.sleep(5)
-        #driver.click('#bot-liker-link-from-home')
-        driver.sleep(5)
-        #driver.save_screenshot('nowsecure.png')
-        #requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendPhoto", params={"chat_id":300939698}, files={"photo": open('/content/nowsecure.png', "rb")})
+    driver.click("#showClicker")
+    driver.sleep(5)
+    #driver.click('#bot-liker-link-from-home')
+    driver.sleep(5)
+    #driver.save_screenshot('nowsecure.png')
+    #requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendPhoto", params={"chat_id":300939698}, files={"photo": open('/content/nowsecure.png', "rb")})
 
-        driver.sleep(5)
-        driver.click("#headingSn2 > div > div")
-        # Like
-        driver.click('#soc-net-youtube > div > div > div:nth-child(2) > div > div > div.checkbox.abc-checkbox.abc-checkbox')
-        # Comment
-        driver.click('#soc-net-youtube > div > div > div:nth-child(4) > div > div > div.checkbox.abc-checkbox.abc-checkbox')
-        # Subscription
-        driver.click('#soc-net-youtube > div > div > div:nth-child(1) > div > div > div.checkbox.abc-checkbox.abc-checkbox')
-        # Whatchs
-        driver.click('#soc-net-youtube > div > div > div:nth-child(3) > div > div > div.checkbox.abc-checkbox.abc-checkbox')
-        driver.sleep(5)
-        driver.click('button[data-target="#botStat"]')
-    except:
-        driver.save_screenshot('nowsecure.png')
-        requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendPhoto", params={"chat_id":300939698}, files={"photo": open('/home/ali/nowsecure.png', "rb")})
-
+    driver.sleep(5)
+    driver.click("#headingSn2 > div > div")
+    # Like
+    driver.click('#soc-net-youtube > div > div > div:nth-child(2) > div > div > div.checkbox.abc-checkbox.abc-checkbox')
+    # Comment
+    driver.click('#soc-net-youtube > div > div > div:nth-child(4) > div > div > div.checkbox.abc-checkbox.abc-checkbox')
+    # Subscription
+    driver.click('#soc-net-youtube > div > div > div:nth-child(1) > div > div > div.checkbox.abc-checkbox.abc-checkbox')
+    # Whatchs
+    driver.click('#soc-net-youtube > div > div > div:nth-child(3) > div > div > div.checkbox.abc-checkbox.abc-checkbox')
+    driver.sleep(5)
+    driver.click('button[data-target="#botStat"]')
+except:
+    driver.save_screenshot('nowsecure.png')
+    requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendPhoto", params={"chat_id":300939698}, files={"photo": open('/home/ali/nowsecure.png', "rb")})
