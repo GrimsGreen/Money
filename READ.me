@@ -58,5 +58,6 @@ try:
     #driver.sleep(5)
     driver.click('button[data-target="#botStat"]')
 except:
+    import pdb; pdb.set_trace()
     driver.save_screenshot('nowsecure.png')
     requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendPhoto", params={"chat_id":300939698}, files={"photo": open('/home/ali/nowsecure.png', "rb")})
