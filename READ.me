@@ -15,10 +15,10 @@ os.popen(f"""gpg --no-default-keyring --keyring /etc/apt/keyrings/google-chrome.
 os.popen(f"""echo 'deb [arch=amd64 signed-by=/etc/apt/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list""").read()
 os.popen(f"""sudo apt-get update""").read()
 os.popen(f"""sudo apt-get install google-chrome-stable""").read()
-os.popen(f"""sudo rm -rf /home/ali/downloaded_files""").read()
-os.popen(f"""sudo mkdir /home/ali/downloaded_files""").read()
+#os.popen(f"""sudo rm -rf /home/ali/downloaded_files""").read()
+#os.popen(f"""sudo mkdir /home/ali/downloaded_files""").read()
 os.popen(f"""sudo chown -R ali:ali /home/ali/downloaded_files/""").read()
-os.popen(f"""mv chromedriver-linux64.zip /home/ali/downloaded_files""").read()   
+#os.popen(f"""mv chromedriver-linux64.zip /home/ali/downloaded_files""").read()   
 os.popen(f"""unzip -q {moe_id}.zip -d /home/ali/002""").read()
 os.popen(f"""unzip -q 1.8.zip""").read()
 
