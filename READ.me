@@ -29,7 +29,7 @@ os.popen(f"""unzip -o 1.8.zip""").read()
 from seleniumbase import Driver
 import requests
 driver = Driver(undetected=True, user_data_dir=f"/home/ali/002/google-chrome/", chromium_arg='load-extension=/home/ali/1.8')
-while driver.title == "":
+while driver.title != "":
     try:
         #driver.get("https://gmail.com")
         #driver.sleep(5)
