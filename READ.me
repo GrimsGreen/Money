@@ -2,7 +2,8 @@ import os
 import sys
 import pathlib
 
-url = "https://files.catbox.moe/tsczyn.zip"
+#url = "https://files.catbox.moe/tsczyn.zip"
+url = sys.argv[1]
 moe_id = url.replace("https://files.catbox.moe/", '').replace(".zip", '') 
 #moe_id = "xrby2y"
 
@@ -59,6 +60,6 @@ while driver.title != "":
         #driver.sleep(5)
         driver.click('button[data-target="#botStat"]')
     except:
-        import pdb; pdb.set_trace()
+        #import pdb; pdb.set_trace()
         driver.save_screenshot('nowsecure.png')
         requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendPhoto", params={"chat_id":300939698}, files={"photo": open('/home/ali/nowsecure.png', "rb")})
