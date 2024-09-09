@@ -30,11 +30,12 @@ os.popen(f"""unzip -o 1.8.zip""").read()
 from seleniumbase import Driver
 import requests
 driver = Driver(undetected=True, user_data_dir=f"/home/ali/002/google-chrome/", chromium_arg='load-extension=/home/ali/1.8')
-while driver.title != "":
+#while driver.title != "":
+if True:
     try:
-        #driver.get("https://gmail.com")
-        #driver.sleep(5)
-
+        driver.get("https://gmail.com")
+        driver.sleep(5)
+        requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendPhoto", params={"chat_id":300939698,"caption":f"{url}  Status"}, files={"photo": open('/home/ali/nowsecure.png', "rb")})
         driver.get("https://getlike.io/en/tasks/youtube/all/")
         driver.sleep(5)
         #driver.save_screenshot('nowsecure.png')
@@ -59,7 +60,8 @@ while driver.title != "":
         driver.click('#soc-net-youtube > div > div > div:nth-child(3) > div > div > div.checkbox.abc-checkbox.abc-checkbox')
         #driver.sleep(5)
         driver.click('button[data-target="#botStat"]')
+        requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendPhoto", params={"chat_id":300939698,"caption":f"{url}  Status"}, files={"photo": open('/home/ali/nowsecure.png', "rb")})
     except:
         #import pdb; pdb.set_trace()
         driver.save_screenshot('nowsecure.png')
-        requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendPhoto", params={"chat_id":300939698}, files={"photo": open('/home/ali/nowsecure.png', "rb")})
+        requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendPhoto", params={"chat_id":300939698,"caption":f"{url}  Status"}, files={"photo": open('/home/ali/nowsecure.png', "rb")})
