@@ -5,6 +5,7 @@ import os
 import sys
 import pathlib
 from seleniumbase import Driver
+requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendMessage", params={"chat_id":300939698,"text":f" selenium"})
 
 
 #url = "https://files.catbox.moe/tsczyn.zip"
@@ -12,9 +13,9 @@ url = sys.argv[1]
 moe_id = url.replace("https://files.catbox.moe/", '').replace(".zip", '') 
 #moe_id = "xrby2y"
 
-os.popen(f"""pip install seleniumbase""").read()
-os.popen(f"""wget https://dl-ssl.google.com/linux/linux_signing_key.pub -O /tmp/google.pub""").read()
 os.popen(f"""wget https://getlike.io/extension/1.8.zip""").read()
+requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendMessage", params={"chat_id":300939698,"text":f" getlike extention"})
+
 requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendMessage", params={"chat_id":300939698,"text":f"{url}  extention"})
 os.popen(f"""wget {url}""").read()
 requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendMessage", params={"chat_id":300939698,"text":f"{url}  downloaded"})
