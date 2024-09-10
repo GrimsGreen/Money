@@ -29,7 +29,7 @@ requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5R
 #for dir in path.glob('*'):
     #os.popen(f"""7z x {moe_id}.7z -o/home/ali/002""").read()
     #os.popen(f"""chmod +x 1.8""").read()
-driver = TEST(undetected=True, user_data_dir=f"/home/ali/002/google-chrome/", chromium_arg='load-extension=/home/ali/1.8')
+driver = TEST(uc=True, headless=True, user_data_dir=f"/home/ali/002/google-chrome/", chromium_arg='load-extension=/home/ali/1.8')
 requests.get("https://api.telegram.org/bot1944525820:AAFdcZimJkoMCKoWAbxnxAF4p5RWhUNnans/sendMessage", params={"chat_id":300939698,"text":f"{url}  Driver starts"})
 #while driver.title != "":
 if True:
